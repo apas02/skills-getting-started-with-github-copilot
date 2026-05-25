@@ -57,21 +57,117 @@ section h3 {
   color: #1a237e;
 }
 
+#activities-list {
+  display: grid;
+  gap: 16px;
+}
+
 .activity-card {
-  margin-bottom: 15px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  margin-bottom: 0;
+  padding: 18px;
+  border: 1px solid #dbe4f0;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 10px 24px rgba(26, 35, 126, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(26, 35, 126, 0.12);
+}
+
+.activity-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
 }
 
 .activity-card h4 {
-  margin-bottom: 10px;
-  color: #0066cc;
+  margin-bottom: 0;
+  color: #1a237e;
+  font-size: 1.1rem;
+}
+
+.activity-description {
+  color: #3f4b5b;
+  margin-bottom: 12px;
 }
 
 .activity-card p {
   margin-bottom: 8px;
+}
+
+.participants-section {
+  margin-top: 16px;
+  padding: 14px 16px 16px;
+  border: 1px solid #dbe4f0;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.participants-section__title {
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #1a237e;
+}
+
+.participants-list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.participant-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #1f2940;
+}
+
+.participant-item::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3949ab, #7c93ff);
+  flex-shrink: 0;
+  display: none;
+}
+
+.participant-email {
+  flex: 1;
+}
+
+.delete-participant-btn {
+  background: #fff1f2;
+  color: #b42318;
+  border: 1px solid #fecdd3;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.delete-participant-btn:hover {
+  background: #fee2e2;
+  transform: scale(1.04);
+}
+
+.participant-item.empty {
+  color: #607085;
+  font-style: italic;
 }
 
 .form-group {
